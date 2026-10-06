@@ -1,0 +1,49 @@
+name: Slow tests (real model)
+
+# tests/test_generation.py: loads and generates from the real
+# google/gemma-3-1b-it model (~2 minutes, downloads ~4GB). Needs an
+# HF_TOKEN repo secret with the gemma-3-1b-it license accepted - see
+# https://huggingface.co/google/gemma-3-1b-it and
+# https://huggingface.co/settings/tokens, then add it at
+# Settings -> Secrets and variables -> Actions -> New repository secret,
+# name HF_TOKEN. Manually triggered (not on every push/PR) given the
+# model download size and the secret dependency - run it from the
+# Actions tab before merging a change that touches retrieval.py,
+# guardrails.py, fact_check.py, or prompting.py.
+on:
+  workflow_dispatch:
+
+jobs:
+  slow-tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e '.[dev]'
+
+
+      - name: Run slow test suite
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: pytest -m slow -v

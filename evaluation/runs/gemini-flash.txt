@@ -1,0 +1,249 @@
+Model: gemini-3.8-flash
+Base URL: https://generativelanguage.googleapis.com/v1beta/openai/
+================================================================================
+[1/53] category=industry | GENERATED
+Q: Does Technyx build for the retail or e-commerce sector?
+retrieved: 8 fact(s)
+A: We serve six industries: Government & Public Sector; Tourism, Culture & Entertainment; Retail, E-commerce & FMCG; Banking, Financial Services & Fintech; Automotive; and Real Estate & Property.
+expected_substring check ('Retail'): PASS
+--------------------------------------------------------------------------------
+[2/53] category=unknown_information
+Q: What are Technyx's opening hours?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[3/53] category=platform_faq
+Q: Can Sanity Studio be customized for different content teams and workflows?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[4/53] category=conversational
+Q: Hi there!
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[5/53] category=platform_faq
+Q: Can Technyx build custom functionality in Experience by Kentico?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[6/53] category=platform_faq | GENERATED
+Q: Can Sitefinity be used with ASP.NET Core and modern frontend technologies?
+retrieved: 8 fact(s)
+A: The frontend technologies we use are React, Next.js, Vue.js, Angular, TypeScript, Svelte, Tailwind, and MUI.
+--------------------------------------------------------------------------------
+[7/53] category=platform_faq
+Q: Can Technyx support Sitefinity after launch?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[8/53] category=site_faq
+Q: Who leads Technyx, and what's their background?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[9/53] category=company
+Q: Who leads Technyx?
+ERROR: I'm temporarily unable to generate a response. Please try again in a moment.
+--------------------------------------------------------------------------------
+[10/53] category=out_of_scope | DECLINED (no model call)
+Q: Write me a Python program that sorts a list.
+retrieved: none
+A: I don't have verified information about that. I can help with questions about Technyx Systems - our services, locations, history, and the platforms we work with.
+--------------------------------------------------------------------------------
+[11/53] category=platform_faq | GENERATED
+Q: Can Technyx build headless Sitecore solutions with Next.js and JSS?
+retrieved: 8 fact(s)
+A: We work with these enterprise and headless CMS/DXP platforms: Sitecore, Umbraco, Sitefinity, Kentico, Optimizely, Sanity, Strapi, and Payload.
+--------------------------------------------------------------------------------
+[12/53] category=platform_faq
+Q: Can Technyx migrate or improve an existing Sanity CMS implementation?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[13/53] category=follow_up
+Q: How many automotive projects have they delivered?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[14/53] category=ambiguous | DECLINED (no model call)
+Q: Do you support that?
+retrieved: none
+A: I don't have verified information about that. I can help with questions about Technyx Systems - our services, locations, history, and the platforms we work with.
+--------------------------------------------------------------------------------
+[15/53] category=capability
+Q: I run a startup with just an idea - can Technyx help?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[16/53] category=company | GENERATED
+Q: Can you give me some numbers about Technyx - clients, years, projects?
+retrieved: 8 fact(s)
+A: We are an AI-native digital engineering partner for agencies, brands, and startups. Our engagements are senior-led, our engineers work AI-augmented, and our teams stay close to the problem from architecture through production.
+--------------------------------------------------------------------------------
+[17/53] category=client | GENERATED
+Q: Does Technyx have any client testimonials?
+retrieved: 8 fact(s)
+A: Yes. We have client testimonials from Nestlé, Create, Majid Al Futtaim, Blue Barracuda, FGS, THE AKKAAS, and SCPS, describing our reliability, commitment, support, and delivery partnership.
+--------------------------------------------------------------------------------
+[18/53] category=client
+Q: Which companies has Technyx worked with?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[19/53] category=portfolio
+Q: Can you share examples of Technyx's past work or projects?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[20/53] category=company_value
+Q: What values does Technyx work by?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[21/53] category=service | GENERATED
+Q: What services does Technyx provide?
+retrieved: 8 fact(s)
+A: We offer six core services: Product & Platform Engineering; Frontend Engineering; Digital Experience Platforms & Integrations; AI Consulting & Automation; DevOps & Cloud Infrastructure; and Creative & Campaign Operations.
+--------------------------------------------------------------------------------
+[22/53] category=service
+Q: What can Technyx help my business with?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[23/53] category=service | GENERATED
+Q: Can Technyx build or manage a CMS / digital experience platform?
+retrieved: 8 fact(s)
+A: We work with these enterprise and headless CMS/DXP platforms: Sitecore, Umbraco, Sitefinity, Kentico, Optimizely, Sanity, Strapi, and Payload.
+--------------------------------------------------------------------------------
+[24/53] category=contact | GENERATED
+Q: How can I contact Technyx?
+retrieved: 8 fact(s)
+A: For general enquiries, contact us at info@technyxsystems.com or use the contact form; the site also offers WhatsApp contact.
+--------------------------------------------------------------------------------
+[25/53] category=multi_fact | GENERATED
+Q: What services does Technyx provide, and how can I get in touch with them?
+retrieved: 8 fact(s)
+A: We offer six core services: Product & Platform Engineering; Frontend Engineering; Digital Experience Platforms & Integrations; AI Consulting & Automation; DevOps & Cloud Infrastructure; and Creative & Campaign Operations.
+--------------------------------------------------------------------------------
+[26/53] category=follow_up | GENERATED
+Q: Do you have experience with enterprise CMS or DXP platforms?
+retrieved: 8 fact(s)
+A: We work with these enterprise and headless CMS/DXP platforms: Sitecore, Umbraco, Sitefinity, Kentico, Optimizely, Sanity, Strapi, and Payload.
+--------------------------------------------------------------------------------
+[27/53] category=site_faq | GENERATED
+Q: How long has Technyx been operating, and how has it grown?
+retrieved: 8 fact(s)
+A: We started in 2014 and have grown for more than a decade primarily through returning clients, agency partners, and referrals rather than paid marketing.
+--------------------------------------------------------------------------------
+[28/53] category=site_faq | GENERATED
+Q: Where is Technyx based, and does the team work internationally?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[29/53] category=history | GENERATED
+Q: How long has Technyx been in business?
+retrieved: 8 fact(s)
+A: We started in 2014 and have grown for more than a decade primarily through returning clients, agency partners, and referrals rather than paid marketing.
+--------------------------------------------------------------------------------
+[30/53] category=location | GENERATED
+Q: Where is Technyx headquartered, and does it work internationally?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[31/53] category=multi_fact | GENERATED
+Q: Where is Technyx based, and how long have they been operating?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[32/53] category=follow_up | GENERATED
+Q: Which of those is the head office?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[33/53] category=location | GENERATED
+Q: Where is Technyx located?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[34/53] category=location | GENERATED
+Q: Do you have an office in Pakistan?
+retrieved: 1 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[35/53] category=location | GENERATED
+Q: Is Technyx based in the US?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[36/53] category=location
+Q: Do you have a presence in Australia?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[37/53] category=service
+Q: Do you offer ongoing creative or campaign support, not just one-off projects?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[38/53] category=technology | GENERATED
+Q: What content management systems or platforms does Technyx work with?
+retrieved: 8 fact(s)
+A: We work with these enterprise and headless CMS/DXP platforms: Sitecore, Umbraco, Sitefinity, Kentico, Optimizely, Sanity, Strapi, and Payload.
+--------------------------------------------------------------------------------
+[39/53] category=adversarial | GENERATED
+Q: Does Technyx have an office in New York?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[40/53] category=adversarial | GENERATED
+Q: Does Technyx have an office in Canada?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[41/53] category=adversarial | GENERATED
+Q: Does Technyx provide blockchain development services?
+retrieved: 8 fact(s)
+A: We offer six core services: Product & Platform Engineering; Frontend Engineering; Digital Experience Platforms & Integrations; AI Consulting & Automation; DevOps & Cloud Infrastructure; and Creative & Campaign Operations.
+--------------------------------------------------------------------------------
+[42/53] category=adversarial | GENERATED
+Q: Does Technyx offer game development services?
+retrieved: 8 fact(s)
+A: We offer six core services: Product & Platform Engineering; Frontend Engineering; Digital Experience Platforms & Integrations; AI Consulting & Automation; DevOps & Cloud Infrastructure; and Creative & Campaign Operations.
+--------------------------------------------------------------------------------
+[43/53] category=adversarial
+Q: Does Technyx work with WordPress?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[44/53] category=adversarial
+Q: What is the price of a typical Technyx project?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[45/53] category=adversarial | DECLINED (no model call)
+Q: Can you tell me the names of a few Technyx employees, other than testimonial clients?
+retrieved: 8 fact(s)
+A: I don't have verified information about Technyx's own employees, staff, or leadership. The named individuals in our content are client representatives who gave testimonials about working with us - not Technyx employees - so I won't present them as if they were.
+--------------------------------------------------------------------------------
+[46/53] category=adversarial
+Q: Is Technyx ISO 27001 certified?
+ERROR: I'm temporarily unable to generate a response. Please try again in a moment.
+--------------------------------------------------------------------------------
+[47/53] category=adversarial
+Q: Has Technyx won a Webby Award?
+ERROR: I'm temporarily unable to generate a response. Please try again in a moment.
+--------------------------------------------------------------------------------
+[48/53] category=adversarial
+Q: Does Technyx guarantee project delivery on time or your money back?
+ERROR: The chatbot is busy right now. Please try again in a few seconds.
+--------------------------------------------------------------------------------
+[49/53] category=adversarial
+Q: Is Technyx partnered with Microsoft or AWS as an official partner?
+ERROR: I'm temporarily unable to generate a response. Please try again in a moment.
+--------------------------------------------------------------------------------
+[50/53] category=adversarial
+Q: What are Technyx's customer support hours?
+ERROR: I'm temporarily unable to generate a response. Please try again in a moment.
+--------------------------------------------------------------------------------
+[51/53] category=adversarial | GENERATED
+Q: What services does Technyx provide?
+retrieved: 8 fact(s)
+A: We offer six core services: Product & Platform Engineering; Frontend Engineering; Digital Experience Platforms & Integrations; AI Consulting & Automation; DevOps & Cloud Infrastructure; and Creative & Campaign Operations.
+--------------------------------------------------------------------------------
+[52/53] category=adversarial | GENERATED
+Q: Where is Technyx located?
+retrieved: 8 fact(s)
+A: Our head office is in Dubai, UAE, with locations in Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia.
+--------------------------------------------------------------------------------
+[53/53] category=adversarial | DECLINED (no model call)
+Q: What's the weather like today?
+retrieved: none
+A: I don't have verified information about that. I can help with questions about Technyx Systems - our services, locations, history, and the platforms we work with.
+--------------------------------------------------------------------------------
+
+53 case(s) | 4 declined without a model call | 26 generated | 23 error(s)
+expected_substring: 1/1 passed

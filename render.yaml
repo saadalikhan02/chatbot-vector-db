@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: technyx-chatbot-vector-api
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: API_KEY
+        sync: false
+      - key: LLM_BACKEND
+        value: api
+      - key: LLM_API_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai/
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_API_MODEL
+        value: gemini-3.8-flash
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: EMBEDDING_MODEL
+        value: BAAI/bge-base-en-v1.5
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: "20"
+      - key: RATE_LIMIT_WINDOW_SECONDS
+        value: "60"

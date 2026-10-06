@@ -1,0 +1,55 @@
+[project]
+name = "chatbot-vector-db"
+version = "0.1.0"
+description = "RAG chatbot for Technyx Systems - a stock instruction-tuned base model grounded by retrieval from a Postgres/pgvector (Supabase) knowledge base"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.51.0",
+    "numpy>=1.26.0",
+    "sentencepiece>=0.2.0",
+    "safetensors>=0.4.3",
+    "python-dotenv>=1.0.1",
+    "huggingface-hub>=0.25.0",
+    "psycopg[binary,pool]>=3.2",
+    "pgvector>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pgserver>=0.1.4",  # private local Postgres+pgvector for tests when TEST_DATABASE_URL is unset
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Fast unit/retrieval tests run by default (`pytest`, seconds). The slow
+# end-to-end suite (real 1B model generation, minutes) only runs when
+# explicitly requested: `pytest -m slow`.
+addopts = "-m 'not slow'"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+check_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+follow_imports = "skip"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

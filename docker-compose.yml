@@ -1,0 +1,64 @@
+# NOTE: written carefully but not run-tested in the environment this was
+# authored in (no Docker available there) - `docker compose up --build`
+# should be the first thing you run, not something to trust blindly.
+#
+# Usage:
+#   cp .env.example .env   # fill in API_KEY at minimum
+#   docker compose up --build
+#
+# With TLS (self-hosting on a bare VPS with a real domain - skip entirely
+# if deploying to a PaaS like Render/Fly.io/Railway, which handles TLS
+# itself):
+#   cp deploy/Caddyfile.example deploy/Caddyfile   # edit in your domain
+#   docker compose --profile tls up --build
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL:?Set DATABASE_URL (Supabase Postgres connection string) in .env}
+      - API_KEY=${API_KEY:?Set API_KEY in .env or the environment - see README's "Serving"}
+      - LLM_BACKEND=${LLM_BACKEND:-}
+      - MODEL_NAME=${MODEL_NAME:-}
+      - GGUF_MODEL_PATH=${GGUF_MODEL_PATH:-}
+      - HF_TOKEN=${HF_TOKEN:-}
+      - LLM_API_BASE_URL=${LLM_API_BASE_URL:-}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_API_MODEL=${LLM_API_MODEL:-}
+      - RATE_LIMIT_MAX_REQUESTS=${RATE_LIMIT_MAX_REQUESTS:-20}
+      - RATE_LIMIT_WINDOW_SECONDS=${RATE_LIMIT_WINDOW_SECONDS:-60}
+    volumes:
+      # Mount a GGUF file built by scripts/export_gguf.py here (outside
+      # this container - see README's "Speed") and set GGUF_MODEL_PATH to
+      # its path under /app/outputs to use the fast backend.
+      - ./outputs:/app/outputs:ro
+      # Persists the plain backend's downloaded model across container
+      # restarts - without this, every restart re-downloads ~4GB.
+      - hf-cache:/home/appuser/.cache/huggingface
+    restart: unless-stopped  # process supervision - restarts automatically on crash
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"  # ~50MB of retained logs, rotated automatically by Docker
+
+  # Optional TLS termination - see the usage note above. Not started by
+  # `docker compose up` alone (only with --profile tls).
+  caddy:
+    image: caddy:2
+    profiles: ["tls"]
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  hf-cache:
+  caddy-data:

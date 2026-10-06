@@ -1,0 +1,50 @@
+name: Re-crawl and sync knowledge base
+
+# Keeps the production knowledge base (Supabase) in step with the website with
+# no redeploy: crawl the sitemap, then sync only what changed. Needs the
+# DATABASE_URL repo secret (Supabase direct or Session-pooler connection string).
+# Runs weekly and on demand (Actions tab -> Run workflow).
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Show what would change without writing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  recrawl:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Crawl the site
+        run: python scripts/crawl_technyx.py
+
+      - name: Sync changes into the database
+        run: python scripts/sync_facts.py ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Keep the crawled facts in git
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if [ -n "$(git status --porcelain data/knowledge/facts.jsonl)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/knowledge/facts.jsonl
+            git commit -m "Refresh crawled facts"
+            git push
+          fi

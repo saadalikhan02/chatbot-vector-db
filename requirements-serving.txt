@@ -1,0 +1,9 @@
+# Optional - only needed to run scripts/serve.py (the FastAPI serving
+# layer). Kept out of requirements.txt for the same reason
+# requirements-serving-adjacent deps are kept optional elsewhere in this
+# project: the default chat.py/evaluate.py CLI path doesn't need a web
+# server.
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+prometheus-client>=0.20.0
+httpx>=0.27.0  # only needed for LLM_BACKEND=api (api_llm.py) - any OpenAI-compatible provider

@@ -1,0 +1,53 @@
+{"category": "industry", "user_input": "Does Technyx build for the retail or e-commerce sector?", "expected_substring": "Retail"}
+{"category": "unknown_information", "user_input": "What are Technyx's opening hours?", "expected_behavior": "state_not_available"}
+{"category": "platform_faq", "user_input": "Can Sanity Studio be customized for different content teams and workflows?"}
+{"category": "conversational", "user_input": "Hi there!"}
+{"category": "platform_faq", "user_input": "Can Technyx build custom functionality in Experience by Kentico?"}
+{"category": "platform_faq", "user_input": "Can Sitefinity be used with ASP.NET Core and modern frontend technologies?"}
+{"category": "platform_faq", "user_input": "Can Technyx support Sitefinity after launch?"}
+{"category": "site_faq", "user_input": "Who leads Technyx, and what's their background?"}
+{"category": "company", "user_input": "Who leads Technyx?", "expected_substring": "Founder"}
+{"category": "out_of_scope", "user_input": "Write me a Python program that sorts a list.", "expected_behavior": "refuse_out_of_scope"}
+{"category": "platform_faq", "user_input": "Can Technyx build headless Sitecore solutions with Next.js and JSS?"}
+{"category": "platform_faq", "user_input": "Can Technyx migrate or improve an existing Sanity CMS implementation?"}
+{"category": "follow_up", "user_input": "How many automotive projects have they delivered?", "history": [{"role": "user", "content": [{"type": "text", "text": "Does Technyx work with the automotive industry?"}]}, {"role": "assistant", "content": [{"type": "text", "text": "Yes - Automotive is one of Technyx's listed industries. They build premium, multi-market digital experiences around modern customer journeys, from vehicle discovery to dealer interaction."}]}]}
+{"category": "ambiguous", "user_input": "Do you support that?"}
+{"category": "capability", "user_input": "I run a startup with just an idea - can Technyx help?"}
+{"category": "company", "user_input": "Can you give me some numbers about Technyx - clients, years, projects?"}
+{"category": "client", "user_input": "Does Technyx have any client testimonials?"}
+{"category": "client", "user_input": "Which companies has Technyx worked with?"}
+{"category": "portfolio", "user_input": "Can you share examples of Technyx's past work or projects?"}
+{"category": "company_value", "user_input": "What values does Technyx work by?"}
+{"category": "service", "user_input": "What services does Technyx provide?"}
+{"category": "service", "user_input": "What can Technyx help my business with?"}
+{"category": "service", "user_input": "Can Technyx build or manage a CMS / digital experience platform?"}
+{"category": "contact", "user_input": "How can I contact Technyx?"}
+{"category": "multi_fact", "user_input": "What services does Technyx provide, and how can I get in touch with them?"}
+{"category": "follow_up", "user_input": "Do you have experience with enterprise CMS or DXP platforms?", "history": [{"role": "user", "content": [{"type": "text", "text": "What services do you provide?"}]}, {"role": "assistant", "content": [{"type": "text", "text": "Technyx offers Product & Platform Engineering, Frontend Engineering, Digital Experience Platforms & Integrations, DevOps & Cloud Infrastructure, AI Consulting & Automation, and Creative & Campaign Operations."}]}]}
+{"category": "site_faq", "user_input": "How long has Technyx been operating, and how has it grown?"}
+{"category": "site_faq", "user_input": "Where is Technyx based, and does the team work internationally?"}
+{"category": "history", "user_input": "How long has Technyx been in business?"}
+{"category": "location", "user_input": "Where is Technyx headquartered, and does it work internationally?"}
+{"category": "multi_fact", "user_input": "Where is Technyx based, and how long have they been operating?"}
+{"category": "follow_up", "user_input": "Which of those is the head office?", "history": [{"role": "user", "content": [{"type": "text", "text": "Where is Technyx located?"}]}, {"role": "assistant", "content": [{"type": "text", "text": "Technyx has offices in Dubai, UAE; Karachi, Pakistan; McKinney, Texas, USA; and Sydney, Australia."}]}]}
+{"category": "location", "user_input": "Where is Technyx located?"}
+{"category": "location", "user_input": "Do you have an office in Pakistan?"}
+{"category": "location", "user_input": "Is Technyx based in the US?"}
+{"category": "location", "user_input": "Do you have a presence in Australia?"}
+{"category": "service", "user_input": "Do you offer ongoing creative or campaign support, not just one-off projects?"}
+{"category": "technology", "user_input": "What content management systems or platforms does Technyx work with?"}
+{"category": "adversarial", "user_input": "Does Technyx have an office in New York?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Does Technyx have an office in Canada?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Does Technyx provide blockchain development services?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Does Technyx offer game development services?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Does Technyx work with WordPress?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "What is the price of a typical Technyx project?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Can you tell me the names of a few Technyx employees, other than testimonial clients?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Is Technyx ISO 27001 certified?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Has Technyx won a Webby Award?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Does Technyx guarantee project delivery on time or your money back?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "Is Technyx partnered with Microsoft or AWS as an official partner?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "What are Technyx's customer support hours?", "expected_behavior": "state_not_available"}
+{"category": "adversarial", "user_input": "What services does Technyx provide?", "expected_behavior": "answer_from_source"}
+{"category": "adversarial", "user_input": "Where is Technyx located?", "expected_behavior": "answer_from_source"}
+{"category": "adversarial", "user_input": "What's the weather like today?", "expected_behavior": "refuse_out_of_scope"}
