@@ -52,17 +52,21 @@ RUN PYTHONPATH=src python -c "from chatbot_rag.retrieval import _get_embedding_m
 # this image. The Gemini API key is injected at runtime as a secret.
 
 
-RUN useradd --create-home --shell /usr/sbin/nologin appuser \
+# Hugging Face Spaces runs the container as UID 1000, so create the user with
+# that exact UID (also fine on any other Docker host).
+RUN useradd --create-home --uid 1000 --shell /usr/sbin/nologin appuser \
     && chown -R appuser:appuser /app
 USER appuser
 
-EXPOSE 8000
+# Hugging Face Spaces expects the app on port 7860 (README.md: app_port).
+# Other hosts (e.g. Render) inject their own PORT at runtime, which wins.
+ENV PORT=7860
+EXPOSE 7860
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)" || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=120s --retries=3 \
+    CMD python -c "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:%s/health' % os.environ.get('PORT','7860'), timeout=3)" || exit 1
 
-# Render needs the container to listen on all interfaces. Render injects
-# PORT at runtime (normally 10000).
+# Listen on all interfaces so the host's proxy can reach the container.
 ENV HOST=0.0.0.0
 
 CMD ["python", "scripts/serve.py"]

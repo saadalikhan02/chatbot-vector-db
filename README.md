@@ -1,3 +1,13 @@
+---
+title: Technyx Chatbot API
+emoji: 💬
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Technyx Chatbot - RAG on a vector database (Supabase / pgvector)
 
 The vector-database sibling of `../chatbot-rag`: same pipeline, guardrails
@@ -210,6 +220,25 @@ to that provider, so startup is instant but each chat request now depends
 on that provider's latency/availability and costs per token. Retrieval,
 guardrails, and fact-checking (`pipeline.answer()`) are identical across
 all three backends either way - see `pipeline.py`'s module docstring.
+
+### Deploying on Hugging Face Spaces (free, no card)
+
+The repo root is a ready-to-run Docker Space (front matter at the top of this
+README sets `sdk: docker`, `app_port: 7860`). Free CPU Spaces have ~16 GB RAM,
+enough for the embedding model.
+
+1. Create a **Docker** Space at huggingface.co/new-space (blank template, CPU basic).
+2. Space -> Settings -> *Variables and secrets*. Secrets: `DATABASE_URL`
+   (Supabase Transaction pooler, port 6543), `API_KEY`, `LLM_API_KEY`.
+   Variables: `LLM_BACKEND=api`, `LLM_API_BASE_URL`, `LLM_API_MODEL`,
+   `CORS_ORIGINS` (your site's origin), `EMBEDDING_MODEL=BAAI/bge-base-en-v1.5`.
+3. Push this repo to the Space's git remote (`git push space main`); the
+   Space builds the Dockerfile and starts automatically.
+4. Check `https://<user>-<space>.hf.space/health` (reports `facts_indexed`).
+
+The Space repo is public if the Space is public, so never commit secrets - they
+live only in the Space settings. Free Spaces sleep when idle and wake on the
+next request.
 
 ### Deploying the API on Render
 
